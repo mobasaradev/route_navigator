@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nav_route/pages/first_page.dart';
 import 'package:nav_route/pages/homepage.dart';
 
 void main() {
@@ -12,9 +13,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
+      title: 'Route and Navigator',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.lime,
       ),
       home: const Homepage(),
     );
