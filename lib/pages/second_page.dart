@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:nav_route/pages/first_page.dart';
-import 'package:nav_route/pages/third_page.dart';
 
 class SecondPage extends StatelessWidget {
   const SecondPage({super.key});
@@ -28,19 +26,14 @@ class SecondPage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               ElevatedButton(
-                onPressed: () {Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const FirstPage()));},
+                onPressed: () {
+                  Navigator.pushNamed(context, '/first');
+                },
                 child: const Text("Previous"),
               ),
               ElevatedButton(
                 onPressed: () {
-                  Navigator.pushAndRemoveUntil(
-                      context,
-                      MaterialPageRoute(
-                          builder: (BuildContext context) => const ThirdPage()),
-                      ModalRoute.withName('/'));
+                  Navigator.pushNamed(context, '/third');
                 },
                 child: const Text("Next"),
               ),
@@ -48,7 +41,6 @@ class SecondPage extends StatelessWidget {
           ),
         ],
       ),
-    
     );
   }
 }

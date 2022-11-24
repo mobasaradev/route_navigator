@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:nav_route/pages/first_page.dart';
-import 'package:nav_route/pages/third_page.dart';
 
 class Homepage extends StatelessWidget {
   const Homepage({super.key});
@@ -29,20 +27,13 @@ class Homepage extends StatelessWidget {
             children: [
               ElevatedButton(
                 onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const ThirdPage()));
+                  Navigator.pushNamed(context, '/third');
                 },
                 child: const Text("Previous"),
               ),
               ElevatedButton(
                 onPressed: () {
-                  Navigator.pushAndRemoveUntil(
-                      context,
-                      MaterialPageRoute(
-                          builder: (BuildContext context) => const FirstPage()),
-                      ModalRoute.withName('/'));
+                  Navigator.pushNamedAndRemoveUntil(context, '/first', (route) => false);
                 },
                 child: const Text("Next"),
               ),
